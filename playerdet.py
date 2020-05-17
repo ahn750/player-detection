@@ -19,6 +19,7 @@ while True:
 	#capturing frames and resizing
 	ret,frame=video.read()
 	frame=cv2.resize(frame,(640,480))
+	
 
 	#convert to HSV colorspace
 	hsv_img=cv2.cvtColor(frame,cv2.COLOR_BGR2HSV) 
@@ -26,7 +27,6 @@ while True:
 	# green color range for football field in HSV
 	lower_green = np.array([25, 48,68],dtype='uint8')
 	upper_green = np.array([50,255,195],dtype='uint8')
-
 
 	#masking the football field black
 	mask=cv2.inRange(hsv_img,lower_green,upper_green) 
@@ -67,7 +67,6 @@ while True:
 	players=[]
 
 	#drawing boxes around detected players and adding crops and coordinates to players list
-
 	for (x,y,w,h) in boundingRects:
 		cv2.rectangle(frame,(x,y),(x+w,y+h),(0,255,0),2)
 		players.append(frame[y-25:y+h+25,x-25:x+w+25])
