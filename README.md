@@ -8,3 +8,4 @@ numpy
 1.Specify your video's complete path in 'path_to_video' variable  
 2.Tune paramters(optional)  
 3.Run the script   
+4.Press 'q' to exit 
