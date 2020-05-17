@@ -1,11 +1,7 @@
 import cv2
-
 import numpy as np
 
-
-
 path_to_video="D:/atharva/pyscripts/sample/football_matches/messiVid3.mp4"
-
 
 #Tuning parameters:
 minContourArea=100
@@ -18,11 +14,10 @@ video=cv2.VideoCapture(path_to_video) #load video
 startFrame=2000 # start from some frame
 video.set(cv2.CAP_PROP_POS_FRAMES, startFrame) 
 
-
 while True:
 
 	#capturing frames and resizing
-	check,frame=video.read()
+	ret,frame=video.read()
 	frame=cv2.resize(frame,(640,480))
 
 	#convert to HSV colorspace
@@ -36,7 +31,6 @@ while True:
 	#masking the football field black
 	mask=cv2.inRange(hsv_img,lower_green,upper_green) 
 	mask=np.invert(mask) 	
-
 	
 	# performing morphological opening
 	kernel_open=np.ones((4,4),np.uint8)
@@ -49,8 +43,7 @@ while True:
 	#filter by contour area
 	areaFilt=np.array([True if cv2.contourArea(cnt)>minContourArea else False for cnt in contours],dtype=bool)
 	contours=contours[areaFilt]
-
-
+	
 	#filter by solidity for removing white field lines
 	temp=[]
 	for cnt in contours:
