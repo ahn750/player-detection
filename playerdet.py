@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-path_to_video=" "
+path_to_video=" "  
 
 #Tuning parameters:
 minContourArea=100
