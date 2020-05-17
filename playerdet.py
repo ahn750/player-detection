@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-path_to_video="D:/atharva/pyscripts/sample/football_matches/messiVid3.mp4"
+path_to_video=" "
 
 #Tuning parameters:
 minContourArea=100
@@ -11,7 +11,7 @@ maxAspectRatio=5
     	
 
 video=cv2.VideoCapture(path_to_video) #load video
-startFrame=2000 # start from some frame
+startFrame=0 # start from some frame
 video.set(cv2.CAP_PROP_POS_FRAMES, startFrame) 
 
 while True:
