@@ -11,7 +11,7 @@ numpy
 4.Press 'q' to exit 
 
 ### Sample Detections
-![Test_image1](Test_Detections/26.jpg)
+![Test_image1](Test_Detections/58.jpg)
 
 ![Test_image1](Test_Detections/11.jpg)
 
