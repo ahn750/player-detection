@@ -1,7 +1,7 @@
 # player-detection
 detects players/referee/ball on football field from a general match broadcasting view
 
-package requirements:  
+## package requirements:  
 openCV-python  
 numpy  
   
@@ -9,3 +9,10 @@ numpy
 2.Tune paramters(optional)  
 3.Run the script   
 4.Press 'q' to exit 
+
+### Sample Detections
+![Test_image1](Test_detections/26.jpg)
+
+![Test_image1](Test_detections/11.jpg)
+
+![Test_image1](Test_detections/35.jpg)
